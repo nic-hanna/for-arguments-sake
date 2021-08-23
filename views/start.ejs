@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: black;
+                padding-top: 4vh;
+            }
+            .title {
+                font-family: "Rampart One", cursive;
+                text-align: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 class='title'>For Argument's Sake</h2>
+        <br><br><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#host">Host</button><br>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#join">Join</button><br>
+        </div>
+
+        <!-- Model for hosting a game-->
+        <form action="./host" method="POST">
+            <div class="modal fade" id="host" tabindex="-1" aria-labelledby="hostLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="hostLabel">Host a game</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating">
+                            <input id="username" name="username" class="form-control" placeholder="Username" required="yes">
+                            <label>Username</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Model for joining a game-->
+        <form action="./join" method="POST">
+            <div class="modal fade" id="join" tabindex="-1" aria-labelledby="joinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="joinLabel">Join a game</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating">
+                            <input id="gameID" name="gameID" class="form-control" placeholder="Game ID" required="yes">
+                            <label>Game ID</label>
+                        </div>
+                        <div class="form-floating">
+                            <input id="username" name="username" class="form-control" placeholder="Username" required="yes">
+                            <label>Username</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </form>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
