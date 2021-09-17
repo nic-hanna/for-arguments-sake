@@ -72,13 +72,13 @@ app.get('/', (req,res) => {
 });
 
 app.get('/lobby', (req,res) => {
-    if (req.cookies["gameID"]){
-        var gameData = checkGame(req.cookies["gameID"])
+    if (req.cookies.gameID){
+        var gameData = checkGame(req.cookies.gameID)
         if (gameData){
-            if (gameData.host == req.cookies["username"]){
-                res.render('lobby', {data: gameData, host: true, username: req.cookies["username"]});
+            if (gameData.host == req.cookies.username){
+                res.render('lobby', {data: gameData, host: true, username: req.cookies.username});
             } else {
-                res.render('lobby', {data: gameData, host: false, username: req.cookies["username"]});
+                res.render('lobby', {data: gameData, host: false, username: req.cookies.username});
             }
         }
     } else {
